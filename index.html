@@ -7,219 +7,221 @@
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="2575.7">
   <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 12.0px 'Apple Color Emoji'; font-kerning: none}
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;FleetFox Quality Academy | Training Portal&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--primary: #ffcc00; /* FleetFox Yellow */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--secondary: #333;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--danger: #ff4d4d;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--success: #28a745;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg: #f8f9fa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: var(--bg); color: var(--secondary); }</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Navigation */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>nav { background: var(--secondary); color: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.lang-switch button { background: none; border: 1px solid white; color: white; cursor: pointer; padding: 5px 10px; margin-left: 5px; border-radius: 3px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Header */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header { background: var(--primary); padding: 2rem 1rem; text-align: center; border-bottom: 4px solid var(--secondary); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.alert-banner { background: var(--danger); color: white; padding: 10px; text-align: center; font-weight: bold; font-size: 0.9rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Content Sections */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container { max-width: 900px; margin: 20px auto; padding: 0 15px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2 { color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* The 15-Minute Clockwise Method */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; position: relative; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card span { position: absolute; top: 10px; right: 10px; font-weight: bold; color: var(--primary); font-size: 1.2rem; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Trash Hunt List */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.trash-list { list-style: none; padding: 0; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.trash-list li { background: #fff5cc; margin: 5px 0; padding: 10px; border-radius: 4px; display: flex; align-items: center; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.trash-list li::before { content: "🗑️"; margin-right: 10px; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Scoring Table */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>th { background: #eee; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.points { font-weight: bold; color: var(--danger); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.method-grid { grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="alert-banner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>🚨 SLA CRITICAL: KEEPING CARS &gt;90 MINS = €300 FINE. NO EXCEPTIONS.</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;strong&gt;🦊 FleetFox Academy&lt;/strong&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="lang-switch"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('en')"&gt;EN&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('de')"&gt;DE&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('es')"&gt;ES&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 id="main-title"&gt;The "Gold Fox" Standard&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p id="sub-title"&gt;How to achieve 95%+ Quality and Earn Your Bonus&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="efficiency"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-efficiency"&gt;⏱️ Targets: Speed vs. Quality&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Rushing kills your score. Not rushing kills our SLA. Follow these timings:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Interior Only:&lt;/strong&gt; 15 - 18 Minutes.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Transfer (Wash + Interior):&lt;/strong&gt; 33 - 40 Minutes.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;The Danger Zone:&lt;/strong&gt; Under 10 mins = Missed spots. Over 60 mins = Fine risk.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="trash"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-trash"&gt;🗑️ The Zero-Trash Protocol&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Miles auditors find trash in these 5 "Blind Spots." You MUST check them:&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="trash-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Glove Box:&lt;/strong&gt; Open it. Every. Single. Time.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Seat Back Pockets:&lt;/strong&gt; Feel inside for receipts/bottles.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Door Pockets:&lt;/strong&gt; Reach the very back corners.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Center Console:&lt;/strong&gt; Check under the armrest &amp; cup holders.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;The Spare Wheel:&lt;/strong&gt; Lift the trunk floor. Check the well.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="workflow"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-workflow"&gt;🧼 The Clockwise Workflow&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="method-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;1&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Preparation&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Red towel (Plastics), Blue towel (Screens), Makita Vacuum, Trash bags.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;2&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Blow-out&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Shake mats outside. Blow dust out of 12V sockets and multimedia buttons.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;3&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Top Wipe&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Wipe cockpit, displays, and steering wheel stalks (Top-to-Bottom).&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;4&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The V-Gap&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Move seats forward. Vacuum between seat and door sill. Clean the rails!&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;5&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Sills&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Hand-dry door sills and rear window—even if it is raining!&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="scorecard"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-score"&gt;📊 Miles Scorecard (The Fails)&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Category&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Major Fail (10pts)&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Minor Fail&lt;/th&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Trash Removal&lt;/strong&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="points"&gt;Any trash found&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;n/a&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Locking&lt;/strong&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="points"&gt;Car left open&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;n/a&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Cockpit/Doors&lt;/strong&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Visible stains&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Dust in corners&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Floor Mats&lt;/strong&gt;&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Not shaken/muddy&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Tiny debris&lt;/td&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/tbody&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;small&gt;*Checkup fails automatically if total points &gt; 10.&lt;/small&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>FleetFox Ops 2026 | Built for the Tallinn, Hamburg, and Berlin Fox Teams</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const content = {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>en: {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>title: 'The "Gold Fox" Standard',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>sub: 'How to achieve 95%+ Quality and Earn Your Bonus',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>eff: '⏱️ Targets: Speed vs. Quality',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>trash: '🗑️ The Zero-Trash Protocol',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flow: '🧼 The Clockwise Workflow',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>score: '📊 Miles Scorecard (The Fails)'</p>
-<p class="p1"><span class="Apple-converted-space">            </span>},</p>
-<p class="p1"><span class="Apple-converted-space">            </span>de: {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>title: 'Der "Gold Fox" Standard',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>sub: 'Wie man 95%+ Qualität erreicht und den Bonus verdient',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>eff: '⏱️ Ziele: Geschwindigkeit vs. Qualität',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>trash: '🗑️ Das Null-Müll-Protokoll',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flow: '🧼 Der Workflow im Uhrzeigersinn',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>score: '📊 Miles Scorecard (Die Fehler)'</p>
-<p class="p1"><span class="Apple-converted-space">            </span>},</p>
-<p class="p1"><span class="Apple-converted-space">            </span>es: {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>title: 'El Estándar "Gold Fox"',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>sub: 'Cómo lograr más del 95% de calidad y ganar su bono',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>eff: '⏱️ Objetivos: Velocidad vs. Calidad',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>trash: '🗑️ Protocolo Cero Basura',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>flow: '🧼 El flujo de trabajo en sentido horario',</p>
-<p class="p1"><span class="Apple-converted-space">                </span>score: '📊 Cuadro de mando de Miles (Fallas)'</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function changeLang(lang) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('main-title').innerText = content[lang].title;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('sub-title').innerText = content[lang].sub;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('t-efficiency').innerText = content[lang].eff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('t-trash').innerText = content[lang].trash;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('t-workflow').innerText = content[lang].flow;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('t-score').innerText = content[lang].score;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;FleetFox Quality Academy | Training Portal&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>:root {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--primary: #ffcc00; /* FleetFox Yellow */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--secondary: #333;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--danger: #ff4d4d;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--success: #28a745;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>--bg: #f8f9fa;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: var(--bg); color: var(--secondary); }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Navigation */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>nav { background: var(--secondary); color: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.lang-switch button { background: none; border: 1px solid white; color: white; cursor: pointer; padding: 5px 10px; margin-left: 5px; border-radius: 3px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Header */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>header { background: var(--primary); padding: 2rem 1rem; text-align: center; border-bottom: 4px solid var(--secondary); }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.alert-banner { background: var(--danger); color: white; padding: 10px; text-align: center; font-weight: bold; font-size: 0.9rem; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Content Sections */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.container { max-width: 900px; margin: 20px auto; padding: 0 15px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>h2 { color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* The 15-Minute Clockwise Method */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; position: relative; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.card span { position: absolute; top: 10px; right: 10px; font-weight: bold; color: var(--primary); font-size: 1.2rem; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Trash Hunt List */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.trash-list { list-style: none; padding: 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.trash-list li { background: #fff5cc; margin: 5px 0; padding: 10px; border-radius: 4px; display: flex; align-items: center; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.trash-list li::before { content: "</span><span class="s2">🗑️</span><span class="s1">"; margin-right: 10px; }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Scoring Table */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85rem; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>th { background: #eee; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.points { font-weight: bold; color: var(--danger); }</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>/* Footer */</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>.method-grid { grid-template-columns: 1fr; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="alert-banner"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span></span><span class="s2">🚨</span><span class="s1"> SLA CRITICAL: KEEPING CARS &gt;90 MINS = €300 FINE. NO EXCEPTIONS.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;strong&gt;</span><span class="s2">🦊</span><span class="s1"> FleetFox Academy&lt;/strong&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;div class="lang-switch"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('en')"&gt;EN&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('de')"&gt;DE&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;button onclick="changeLang('es')"&gt;ES&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;header&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;h1 id="main-title"&gt;The "Gold Fox" Standard&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;p id="sub-title"&gt;How to achieve 95%+ Quality and Earn Your Bonus&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="efficiency"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-efficiency"&gt;</span><span class="s2">⏱️</span><span class="s1"> Targets: Speed vs. Quality&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Rushing kills your score. Not rushing kills our SLA. Follow these timings:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Interior Only:&lt;/strong&gt; 15 - 18 Minutes.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Transfer (Wash + Interior):&lt;/strong&gt; 33 - 40 Minutes.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;The Danger Zone:&lt;/strong&gt; Under 10 mins = Missed spots. Over 60 mins = Fine risk.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="trash"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-trash"&gt;</span><span class="s2">🗑️</span><span class="s1"> The Zero-Trash Protocol&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;Miles auditors find trash in these 5 "Blind Spots." You MUST check them:&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;ul class="trash-list"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Glove Box:&lt;/strong&gt; Open it. Every. Single. Time.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Seat Back Pockets:&lt;/strong&gt; Feel inside for receipts/bottles.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Door Pockets:&lt;/strong&gt; Reach the very back corners.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;Center Console:&lt;/strong&gt; Check under the armrest &amp; cup holders.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong&gt;The Spare Wheel:&lt;/strong&gt; Lift the trunk floor. Check the well.&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="workflow"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-workflow"&gt;</span><span class="s2">🧼</span><span class="s1"> The Clockwise Workflow&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;div class="method-grid"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;1&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Preparation&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Red towel (Plastics), Blue towel (Screens), Makita Vacuum, Trash bags.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;2&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Blow-out&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Shake mats outside. Blow dust out of 12V sockets and multimedia buttons.&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;3&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Top Wipe&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Wipe cockpit, displays, and steering wheel stalks (Top-to-Bottom).&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;4&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The V-Gap&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Move seats forward. Vacuum between seat and door sill. Clean the rails!&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;div class="card"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;span&gt;5&lt;/span&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;The Sills&lt;/h4&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Hand-dry door sills and rear window—even if it is raining!&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;section id="scorecard"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;h2 id="t-score"&gt;</span><span class="s2">📊</span><span class="s1"> Miles Scorecard (The Fails)&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Category&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Major Fail (10pts)&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;th&gt;Minor Fail&lt;/th&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/thead&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Trash Removal&lt;/strong&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="points"&gt;Any trash found&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;n/a&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Locking&lt;/strong&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td class="points"&gt;Car left open&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;n/a&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Cockpit/Doors&lt;/strong&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Visible stains&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Dust in corners&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;&lt;strong&gt;Floor Mats&lt;/strong&gt;&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Not shaken/muddy&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                        </span>&lt;td&gt;Tiny debris&lt;/td&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;/tbody&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;/table&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;small&gt;*Checkup fails automatically if total points &gt; 10.&lt;/small&gt;&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>FleetFox Ops 2026 | Built for the Tallinn, Hamburg, and Berlin Fox Teams</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>const content = {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>en: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: 'The "Gold Fox" Standard',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sub: 'How to achieve 95%+ Quality and Earn Your Bonus',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>eff: '</span><span class="s2">⏱️</span><span class="s1"> Targets: Speed vs. Quality',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>trash: '</span><span class="s2">🗑️</span><span class="s1"> The Zero-Trash Protocol',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>flow: '</span><span class="s2">🧼</span><span class="s1"> The Clockwise Workflow',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>score: '</span><span class="s2">📊</span><span class="s1"> Miles Scorecard (The Fails)'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>de: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: 'Der "Gold Fox" Standard',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sub: 'Wie man 95%+ Qualität erreicht und den Bonus verdient',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>eff: '</span><span class="s2">⏱️</span><span class="s1"> Ziele: Geschwindigkeit vs. Qualität',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>trash: '</span><span class="s2">🗑️</span><span class="s1"> Das Null-Müll-Protokoll',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>flow: '</span><span class="s2">🧼</span><span class="s1"> Der Workflow im Uhrzeigersinn',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>score: '</span><span class="s2">📊</span><span class="s1"> Miles Scorecard (Die Fehler)'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>},</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>es: {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>title: 'El Estándar "Gold Fox"',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sub: 'Cómo lograr más del 95% de calidad y ganar su bono',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>eff: '</span><span class="s2">⏱️</span><span class="s1"> Objetivos: Velocidad vs. Calidad',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>trash: '</span><span class="s2">🗑️</span><span class="s1"> Protocolo Cero Basura',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>flow: '</span><span class="s2">🧼</span><span class="s1"> El flujo de trabajo en sentido horario',</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>score: '</span><span class="s2">📊</span><span class="s1"> Cuadro de mando de Miles (Fallas)'</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function changeLang(lang) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('main-title').innerText = content[lang].title;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('sub-title').innerText = content[lang].sub;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('t-efficiency').innerText = content[lang].eff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('t-trash').innerText = content[lang].trash;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('t-workflow').innerText = content[lang].flow;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('t-score').innerText = content[lang].score;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
