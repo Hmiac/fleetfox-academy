@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FleetFox | Quality Academy</title>
+    <title>FleetFox | Performance & Tiering Portal</title>
     <style>
-        :root { --ff-yellow: #ffcc00; --ff-dark: #333333; --ff-red: #ff4d4d; --ff-green: #28a745; --ff-light: #f8f9fa; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; background: var(--ff-light); color: var(--ff-dark); }
+        :root { 
+            --ff-yellow: #ffcc00; 
+            --ff-dark: #333333; 
+            --ff-red: #ff4d4d; 
+            --ff-green: #28a745; 
+            --ff-light: #f8f9fa;
+            --silver: #C0C0C0; 
+            --gold: #D4AF37; 
+            --diamond: #b9f2ff;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; background: var(--ff-light); color: var(--ff-dark); line-height: 1.6; }
         
         /* Navigation & Language Toggle */
         nav { background: var(--ff-dark); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
@@ -19,28 +28,36 @@
         /* Hero */
         header { background: var(--ff-yellow); padding: 40px 20px; text-align: center; border-bottom: 5px solid var(--ff-dark); }
 
-        .content { max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        .content { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
         section { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 25px; }
         h2 { margin-top: 0; color: var(--ff-dark); border-bottom: 3px solid var(--ff-yellow); display: inline-block; padding-bottom: 5px; }
 
+        /* Tier Cards */
+        .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .tier-card { background: white; border-radius: 12px; padding: 25px; border-top: 10px solid; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .tier-card.silver { border-color: var(--silver); }
+        .tier-card.gold { border-color: var(--gold); }
+        .tier-card.diamond { border-color: var(--diamond); }
+
         /* Checkpoint Cards */
-        .checkpoint-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .card { border: 2px solid #eee; padding: 20px; border-radius: 10px; position: relative; }
+        .checkpoint-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 20px; }
+        .card { border: 2px solid #eee; padding: 15px; border-radius: 10px; position: relative; }
         .card.fail { border-color: var(--ff-red); background: #fff5f5; }
-        .card h4 { margin-top: 0; color: #555; }
-        .badge { position: absolute; top: 10px; right: 10px; font-size: 0.7rem; padding: 3px 8px; border-radius: 20px; font-weight: bold; text-transform: uppercase; }
+        .badge { position: absolute; top: 10px; right: 10px; font-size: 0.6rem; padding: 3px 8px; border-radius: 20px; font-weight: bold; text-transform: uppercase; }
         .badge.major { background: var(--ff-red); color: white; }
 
         /* Simulator Table */
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; background: white; }
         th, td { text-align: left; padding: 12px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        .score-row:hover { background-color: #fcfcfc; }
+        th { background: var(--ff-dark); color: white; }
+        .bonus { color: var(--ff-green); font-weight: bold; }
+        .penalty { color: var(--ff-red); font-weight: bold; }
 
-        /* Finish Button */
+        /* Buttons */
         .btn-finish { background: var(--ff-dark); color: white; width: 100%; padding: 20px; border: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 20px; }
         .btn-finish:hover { background: #000; transform: translateY(-2px); }
 
-        @media (max-width: 600px) { section { padding: 15px; } }
+        @media (max-width: 600px) { .tier-grid, .checkpoint-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -60,50 +77,156 @@
 
     <header>
         <h1 id="title">The Gold Fox Standard</h1>
-        <p id="subtitle">Precision Maintenance for Miles Mobility</p>
+        <p id="subtitle">Precision Maintenance & Performance Tiering</p>
     </header>
 
     <div class="content">
 
         <section>
-            <h2 id="m1-title">🔍 The 5 Hidden Trash Spots</h2>
-            <p id="m1-desc">Miles auditors are trained to find even a single receipt. <strong>Check these 5 areas every time:</strong></p>
-            <div class="checkpoint-grid">
-                <div class="card"><strong>1. Glovebox</strong><br><small>Open and clear all papers/bottles.</small></div>
-                <div class="card"><strong>2. Seat Pockets</strong><br><small>Reach deep into the back fabric.</small></div>
-                <div class="card"><strong>3. Door Bins</strong><br><small>Check all 4 corners of all doors.</small></div>
-                <div class="card"><strong>4. Trunk Well</strong><br><small>Lift floor board; check spare well.</small></div>
-                <div class="card"><strong>5. Sun Visors</strong><br><small>Flip down; check for hidden notes.</small></div>
+            <h2 id="t-tiers">🏆 The Rank Requirements</h2>
+            <div class="tier-grid">
+                <div class="tier-card silver">
+                    <h3>Silver Fox</h3>
+                    <p><strong>Base Pay:</strong> €7.00/wash</p>
+                    <p>✅ Onboarding + Trainer Validation</p>
+                    <p>⚡ Target: 3.0 Cleans / Hr</p>
+                    <p>📅 Standard Shift Booking</p>
+                </div>
+                <div class="tier-card gold">
+                    <h3>Gold Fox</h3>
+                    <p><strong>Pay:</strong> €7.00 + <span class="bonus">€1.00 Bonus</span></p>
+                    <p>✅ Quality > 90% | Min. X Orders</p>
+                    <p>⚡ Target: 3.5 Cleans / Hr</p>
+                    <p>📅 Book 2 weeks ahead (Min)</p>
+                </div>
+                <div class="tier-card diamond">
+                    <h3>Diamond Fox</h3>
+                    <p><strong>Pay:</strong> €7.00 + <span class="bonus">€1.50 Bonus</span></p>
+                    <p>✅ Quality > 95% (Retrograde if <)</p>
+                    <p>⚡ Target: 4.0 Cleans / Hr</p>
+                    <p>🎓 Eligible for Trainer/QC roles</p>
+                </div>
             </div>
         </section>
 
         <section>
-            <h2 id="m2-title">🧼 The No-Miss Workflow</h2>
-            <p id="m2-desc">Follow the <strong>Clockwise Rule</strong> to hit 100% efficiency.</p>
+            <h2 id="m1-title">🔍 The 5 Hidden Trash Spots</h2>
+            <p id="m1-desc">Miles auditors have zero tolerance. <strong>Check these 5 areas every time:</strong></p>
+            <div class="checkpoint-grid">
+                <div class="card"><strong>1. Glovebox</strong><br><small>Clear all papers/masks.</small></div>
+                <div class="card"><strong>2. Seat Pockets</strong><br><small>Feel deep inside back fabric.</small></div>
+                <div class="card"><strong>3. Door Bins</strong><br><small>Check all 4 door corners.</small></div>
+                <div class="card"><strong>4. Trunk Well</strong><br><small>Check under trunk carpet.</small></div>
+                <div class="card"><strong>5. Sun Visors</strong><br><small>Flip down; check for notes.</small></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💰 Earning Simulation (100 Washes)</h2>
+            <p>Example of monthly potential based on tier performance:</p>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fox Name</th>
+                            <th>Current Tier</th>
+                            <th>Washes</th>
+                            <th>Base Pay (€7)</th>
+                            <th>Tier Bonus</th>
+                            <th>Total Payout</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sim-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚠️ Quality Deductions & Penalties</h2>
             <table>
-                <tr class="score-row"><td><strong>Step 1</strong></td><td><strong>The Sweep:</strong> Remove ALL trash from all 5 zones.</td></tr>
-                <tr class="score-row"><td><strong>Step 2</strong></td><td><strong>Top Wipe:</strong> Cockpit, Steering Stalks, Displays (Blue Towel).</td></tr>
-                <tr class="score-row"><td><strong>Step 3</strong></td><td><strong>The V-Gap:</strong> Move seat, vacuum rails and door sills.</td></tr>
-                <tr class="score-row"><td><strong>Step 4</strong></td><td><strong>The Finish:</strong> Refill fluid & <strong>Hand-dry sills</strong> (Rain or Shine).</td></tr>
+                <thead>
+                    <tr>
+                        <th>Violation Type</th>
+                        <th>Impact</th>
+                        <th>Financial Hit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Major Trash Found</td>
+                        <td>Rank Retrograde</td>
+                        <td class="penalty">€10.00 Deduction</td>
+                    </tr>
+                    <tr>
+                        <td>Car Left Unlocked</td>
+                        <td>Immediate Rank 1</td>
+                        <td class="penalty">€30.00 Deduction</td>
+                    </tr>
+                    <tr>
+                        <td>SLA Breach (>90 min)</td>
+                        <td>Account Warning</td>
+                        <td class="penalty">Full Penalty Transfer</td>
+                    </tr>
+                </tbody>
             </table>
         </section>
 
-        <section>
-            <h2 id="m3-title">📊 Scorecard Risk (Miles Score)</h2>
-            <p id="m3-desc">One Major Fail = Automatic Audit Failure. No bonus.</p>
-            <div class="checkpoint-grid">
-                <div class="card fail">
-                    <span class="badge major">MAJOR</span>
-                    <h4>Trash Found</h4>
-                    <p>10pt Deduction</p>
-                </div>
-                <div class="card fail">
-                    <span class="badge major">MAJOR</span>
-                    <h4>Car Unlocked</h4>
-                    <p>10pt Deduction</p>
-                </div>
-            </div>
-        </section>
-
         <button class="btn-finish" id="finishBtn" onclick="completeTraining()">I HAVE READ & AGREE TO STANDARDS</button>
-        <p id="confirmation
+        <p id="confirmation" style="text-align:center; color: var(--ff-green); display:none; font-weight:bold;">✅ Success! Training logged for your profile.</p>
+
+    </div>
+
+    <footer style="text-align:center; padding: 40px; color: #999; font-size: 0.8rem;">
+        FleetFox Ops 2026 | Built for Hamburg, Berlin & Tallinn Teams
+    </footer>
+
+    <script>
+        // Simulation Data
+        const foxes = [
+            { name: "Dave P.", tier: "Diamond", bonus: 1.5 },
+            { name: "Mario L.", tier: "Diamond", bonus: 1.5 },
+            { name: "Lars K.", tier: "Gold", bonus: 1.0 },
+            { name: "Sandi S.", tier: "Gold", bonus: 1.0 },
+            { name: "Richard M.", tier: "Gold", bonus: 1.0 },
+            { name: "Meliha X.", tier: "Silver", bonus: 0 },
+            { name: "Juan R.", tier: "Silver", bonus: 0 },
+            { name: "Sven H.", tier: "Silver", bonus: 0 },
+            { name: "Erik T.", tier: "Silver", bonus: 0 },
+            { name: "Alex B.", tier: "Silver", bonus: 0 }
+        ];
+
+        const body = document.getElementById('sim-body');
+        foxes.forEach(fox => {
+            let totalBase = 700; 
+            let totalBonus = fox.bonus * 100;
+            body.innerHTML += `
+                <tr>
+                    <td>${fox.name}</td>
+                    <td><span style="color:${fox.tier==='Diamond'?'#007bff':'#555'}">${fox.tier}</span></td>
+                    <td>100</td>
+                    <td>€${totalBase}</td>
+                    <td class="bonus">+€${totalBonus}</td>
+                    <td><strong>€${totalBase + totalBonus}</strong></td>
+                </tr>`;
+        });
+
+        // Language Logic
+        const trans = {
+            en: { title: "The Gold Fox Standard", sub: "Precision Maintenance & Performance Tiering", finish: "I HAVE READ & AGREE TO STANDARDS" },
+            de: { title: "Der Gold Fox Standard", sub: "Präzisionswartung & Leistungsstufen", finish: "GELESEN & STANDARDS AKZEPTIERT" },
+            es: { title: "El Estándar Gold Fox", sub: "Mantenimiento de Precisión y Niveles", finish: "HE LEÍDO Y ACEPTO LOS ESTÁNDARES" }
+        };
+
+        function setLang(l) {
+            document.getElementById('title').innerText = trans[l].title;
+            document.getElementById('subtitle').innerText = trans[l].sub;
+            document.getElementById('finishBtn').innerText = trans[l].finish;
+        }
+
+        function completeTraining() {
+            document.getElementById('finishBtn').style.display = 'none';
+            document.getElementById('confirmation').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
